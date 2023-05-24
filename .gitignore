@@ -1,2 +1,4 @@
 ## Ignore log files
 *.log
+dist/
+root_exporter.egg-info/

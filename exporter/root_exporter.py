@@ -56,7 +56,6 @@ def __export(root_path:str, export_to:str, export_type:file_type=file_type.csv):
         bar = IncrementalBar('Exporting...', max = len(trees))
 
         for tree in trees:
-            bar.next()
             branches = file[tree].keys()
             df = ak.to_dataframe(file[tree].arrays(branches))
 
@@ -66,6 +65,8 @@ def __export(root_path:str, export_to:str, export_type:file_type=file_type.csv):
                                                                 , chunksize=100000
                                                                 , compression='gzip'
                                                                 , encoding='utf-8')
+            bar.next()
+
         bar.finish()   
     except Exception as e:
         # logger.error(f'Failed to open {root_path}. Reason: {e}')
