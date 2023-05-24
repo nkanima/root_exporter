@@ -11,9 +11,9 @@ setuptools.setup(
     description=("Pass .root file path and get the trees exported in .csv format."),
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="to be filled",
+    url="https://github.com/nkanima/root_exporter",
     project_urls={
-        "Bug Tracker": "to be filled",
+        "Bug Tracker": "https://github.com/nkanima/root_exporter/issues",
     },
     classifiers=[
         "Programming Language :: Python :: 3",
