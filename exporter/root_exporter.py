@@ -1,3 +1,6 @@
+"""
+The module to convert root file's trees into csv files
+"""
 from os import sys
 from enum import Enum
 import uproot
@@ -5,10 +8,8 @@ from pathlib import Path
 from typing import Dict
 import awkward as ak
 from enum import Enum
-# import logging
 from progress.bar import IncrementalBar
 
-# logger = logging.getLogger("error.log")
 
 class file_type(Enum):
     csv = 1,
@@ -63,7 +64,7 @@ def __export(root_path:str, export_to:str, export_type:file_type=file_type.csv):
                 df.to_csv(os.path.join(export_to, f'{tree}.csv'), header=True
                                                                 , index=False
                                                                 , chunksize=100000
-                                                                , compression='gzip'
+                                                                # , compression='gzip'
                                                                 , encoding='utf-8')
             bar.next()
 
@@ -76,5 +77,9 @@ def __export(root_path:str, export_to:str, export_type:file_type=file_type.csv):
 def export_to_csv(root_path:str, export_to:str=""):
     '''
         Exports root file into one more csv files
-    '''
+    '''   
     __export(root_path, export_to, file_type.csv)
+
+# if __name__ == "__main__":
+#     export_to_csv("C:\\5.VAC\\Tasks\\Root Analysis\\RootFiles\\GF Singapore\\WTS_Para_004__1.root",
+#               "C:\\5.VAC\\Tasks\\Root Analysis\\Extracted\\P9000\\Test")
