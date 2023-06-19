@@ -79,7 +79,3 @@ def export_to_csv(root_path:str, export_to:str=""):
         Exports root file into one more csv files
     '''   
     __export(root_path, export_to, file_type.csv)
-
-# if __name__ == "__main__":
-#     export_to_csv("C:\\5.VAC\\Tasks\\Root Analysis\\RootFiles\\GF Singapore\\WTS_Para_004__1.root",
-#               "C:\\5.VAC\\Tasks\\Root Analysis\\Extracted\\P9000\\Test")
