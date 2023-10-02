@@ -23,9 +23,9 @@ entry-points = { "console_scripts" = ["rootexport = exporter.cli:main"] }
 
 [tool.poetry.dependencies]
 python = ">=3.6"
-uproot = "^4.0"
-awkward = "^1.5"
-progress = "^1.6"
+uproot = ">=4.0"
+awkward = ">=1.5"
+progress = ">=1.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
