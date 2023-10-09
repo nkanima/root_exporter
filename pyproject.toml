@@ -1,3 +1,32 @@
 [build-system]
-requires = ["setuptools>=42"]
+requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+name = "root_exporter"
+version = "0.0.1"
+author = "Anima N K"
+author_email = "nk.anima@gmail.com"
+description = "Pass .root file path and get the trees exported in .csv format."
+long_description = """
+Pass .root file path and get the trees exported in .csv format.
+"""
+url = "https://github.com/nkanima/root_exporter"
+project_urls = { "Bug Tracker" = "https://github.com/nkanima/root_exporter/issues" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.6"
+entry-points = { "console_scripts" = ["rootexport = exporter.cli:main"] }
+
+[tool.poetry.dependencies]
+python = ">=3.6"
+uproot = ">=4.0"
+awkward = ">=1.5"
+progress = ">=1.6"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
